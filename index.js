@@ -1,5 +1,9 @@
 var express = require('express');
 var app = express();
+var cors = require('cors');
+
+app.use(cors());
+
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var kafka = require("kafka-node");
