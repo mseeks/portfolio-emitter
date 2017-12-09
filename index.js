@@ -12,7 +12,7 @@ http.listen(port, function () {
 
 //Call SocketIO with the message from Kafka
 function emit(io, message){
-  io.sockets.emit("channel", message);
+  io.sockets.emit(message.topic, message.value);
 }
 
 // Init the Kafka client. Basically just make topic the same topic as your producer and you are ready to go. group-id can be anything.
@@ -24,6 +24,6 @@ var kafkaConsumer = new kafka.ConsumerGroup({
     ]);
 
 kafkaConsumer.on('message', function (message) {
-  console.log(message);
+  console.log(message.topic + "->" + message.value);
   emit(io, message);
 });
