@@ -24,6 +24,6 @@ var kafkaConsumer = new kafka.ConsumerGroup({
     ]);
 
 kafkaConsumer.on('message', function (message) {
-  console.log(message.topic + "->" + message.value);
+  console.log(message.topic + " -> " + message.value);
   emit(io, message);
 });
