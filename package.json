@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-emitter",
+  "version": "0.0.0",
+  "description": "A simple socket implementation for connecting a realtime dashboard to a Kafka stream",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "kafka-node": "*"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
