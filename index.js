@@ -24,7 +24,8 @@ var kafkaConsumer = new kafka.ConsumerGroup({
       kafkaHost: process.env.KAFKA_HOST + ":" + process.env.KAFKA_PORT,
       groupId: "portfolio-emitter"
     }, [
-      "portfolio-stats"
+      "portfolio-stats",
+      "portfolio-positions"
     ]);
 
 kafkaConsumer.on('message', function (message) {
